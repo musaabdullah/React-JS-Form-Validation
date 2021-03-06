@@ -16,19 +16,19 @@ function App() {
   const handleValid = (e) => {
     e.preventDefault();
     if(!fullName){
-      setErrorFullName("You can't leave full name empty")
+      setErrorFullName("لا يمكن ترك أسم المستخدم فارغا")
     }else{
       setErrorFullName("");
     }
     if(!email){
-      setErrorEmail("You can't leave email empty")
+      setErrorEmail("لا يمكن ترك بريد المستخدم فارغا")
     }else {
       setErrorEmail("");
     }
     if(!password){
-      setErrorPassword("You can't leave password empty");
+      setErrorPassword("لا يمكن ترك كلمة المرور فارغا");
     }else if(password.length < 6) {
-      setErrorPassword("Password must be more than 6 character")
+      setErrorPassword("كلمة المرور يجب ان تكون اكثر من سته احروف")
     }else {
       setErrorPassword("");
     }
@@ -36,19 +36,19 @@ function App() {
 
   return (
     <div className="container">
-  <div className="container__title">create account</div>
+  <div className="container__title">أنشاء حساب</div>
 
    {/* <div className="container__error">
   
   </div> } */}
 
-  <div className="container__body">
+  <div dir="rtl" className="container__body">
     <form className="form"> 
        <div className="form__group">
           <i className="fa fa-user"></i>
           <input 
           type="text"
-          placeholder="Full Name"
+          placeholder="أسم السمتخدم"
           value={fullName}
           onChange={(e) => setFullName(e.target.value)} />
        </div>
@@ -57,7 +57,7 @@ function App() {
           <i className="fa fa-envelope"></i>
           <input 
           type="email" 
-          placeholder="Email" 
+          placeholder="أيميل المستخدم" 
           value={email}
           onChange = {(e) => setEmail(e.target.value)}
           />
@@ -67,19 +67,19 @@ function App() {
           <i className="fa fa-unlock-alt"></i>
           <input 
           type="password" 
-          placeholder="Password"
+          placeholder="كلمة المرور"
           value = {password}
           onChange = {(e) => setPassword(e.target.value)}
           /><br/>
        </div>
        {errorPassword && <p className="error">{errorPassword}</p>}
 
-       <button onClick={handleValid}>signup</button>
+       <button onClick={handleValid}>سجل حساب</button>
     </form>
   </div>
     <div className="container__footer">
     <div className="footer__title">
-      Already have an account?<a href="#">Log in</a>
+       اذا كان عندك حساب سابقا؟<a href="#">تسجيل دخول</a>
     </div>
   </div>
 </div>
